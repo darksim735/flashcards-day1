@@ -9,10 +9,10 @@
         <link rel="stylesheet" type="text/css" href="reset.css" />
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
-    <div ng-app="flashcards">
-        <div class="flash-card" ng-controller="FlashCardController">
-            <h1>{{flashCard.question}}</h1>
-            <ul class="flash-card-answers" ng-repeat="answer in flashCard.answers">
+    <div ng-app="flashcards" ng-controller="MainController">
+        <div class="flash-card" ng-repeat="flashcard in flashCards" ng-controller="FlashCardController">
+            <h1>{{flashcard.question}}</h1>
+            <ul class="flash-card-answers" ng-repeat="answer in flashcard.answers">
                 <li class="flash-card-answer"
                 ng-click="checkAnswer(answer)"
                 ng-hide="answered">
