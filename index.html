@@ -14,16 +14,23 @@
             <h1>{{flashCard.question}}</h1>
             <ul class="flash-card-answers" ng-repeat="answer in flashCard.answers">
                 <li class="flash-card-answer"
-                ng-click="checkAnswer(answer.correct)">
+                ng-click="checkAnswer(answer)"
+                ng-hide="answered">
                 {{ answer.text }}
                 </li>
-                <li class="flash-card-answer">
+<!--                 <li class="flash-card-answer">
                 No, it's not.
                 </li>
                 <li class="flash-card-answer">
                 What's a flash card?
-                </li>
+                </li> -->
             </ul>
-        </div> 
-    </div>
+
+                <h2 class="answer-feedback" ng-show="answered">
+                    <span ng-show="answeredCorrectly">Yeah, you got it right!</span>
+                    <span ng-show="!answeredCorrectly">Nope, you got it wrong.</span>
+                </h2>
+
+        </div> <!-- end flash-card -->
+    </div><!-- end app -->
 </html>

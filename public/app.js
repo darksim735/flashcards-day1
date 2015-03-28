@@ -2,13 +2,35 @@ var app = angular.module('flashcards', []);
 
 app.controller('FlashCardController', function($scope){    
 
+// var answered;
+// var realAnswer = false;
+// var answeredCorrectly;
 
-$scope.checkAnswer = function(thing){
-console.log("hello, function fired");
-//console.log($scope.flashCard.correct);
-console.log(thing);
 
-};
+	$scope.answeredCorrectly;
+
+	$scope.checkAnswer = function(thing){
+		console.log("hello, function fired");
+		console.log("answer: ",thing);
+		console.log("answer_result: ",thing.correct);
+
+		$scope.answeredCorrectly = 	thing.correct
+		console.log("result: ",$scope.answeredCorrectly);		
+
+		//console.log($scope.flashCard.correct);
+		
+		$scope.realAnswer = thing;
+		$scope.answered = true;
+		console.log("answered: ",answered);
+	    console.log("realAnswer: ",realAnswer);
+
+	};
+
+
+//	$scope.answeredCorrectly = function(){
+//		console.log("answered correctly fired");
+//		return realAnswer;
+//	};
 
     
     $scope.flashCard = {
